@@ -1,0 +1,28 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="1" name="basyaworld_fc" folder="stages/basya_FC/" startCamPosY="0" startCamPosX="0">
+	<sprite name="sky"               x="-935"  y="-240"   sprite="sky"        	scale="0.5"		  								/>
+	<sprite name="sun"               x="-935"  y="-240"   sprite="sun"        	scale="0.5"		  								/>
+	<sprite name="FRONT1_BCK3"       x="-936"  y="-240"   sprite="FRONT1_BCK3"   scale="0.5"		  							/>
+	<sprite name="FRONT1_BCK2"       x="-935"  y="-240"   sprite="FRONT1_BCK2"	scale="0.5"		  								/>
+	<sprite name="FRONT1_BCK1"       x="-935"  y="-240"   sprite="FRONT1_BCK1"	scale="0.5"		  								/>
+	<sprite name="front1"            x="-935"  y="-240"   sprite="front1"		scale="0.5"		  								/>
+
+	<sprite name="FRONT2_BCK3"       x="-935"  y="-240"   sprite="FRONT2_BCK3"	scale="0.5"		  								/>
+	<sprite name="FRONT2_BCK2"       x="-935"  y="-240"   sprite="FRONT2_BCK2"	scale="0.5"		  								/>
+	<sprite name="FRONT2_BCK1"       x="-935"  y="-240"   sprite="FRONT2_BCK1"	scale="0.5"		  								/>
+	<sprite name="front2"            x="-935"  y="-240"   sprite="front2"		scale="0.5"		  								/>
+
+	<sprite name="bla"			 	 x="0"     y="0"   						sprite="bla" 										/>
+	<sprite name="vignette"			 x="0"     y="0"   						sprite="vignette" 									/>
+	
+	<girlfriend x="999999" y="99999"/>
+	<dad x="-300" y="230"/>
+	<boyfriend x="430" y="100"/>
+
+	<sprite name="rain" 			 x="-935"  y="-240"   sprite="rain" 														>
+    <anim name="raining"			 anim="rain tho"       loop="true"			fps="60"										/>
+	</sprite>
+
+	<sprite name="lineal"			 x="-935"  y="-240"   sprite="lineal" 	forefront="true"	scale="0.5"						/>
+	<sprite name="black"			 x="0"     y="0"   	  sprite="black" 														/>
+</stage>

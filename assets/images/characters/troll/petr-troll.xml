@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="petr-troll.png">
+<SubTexture name="idle0000" x="444" y="206" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="down0000" x="0" y="643" width="271" height="175" frameX="-30" frameY="-81" frameWidth="321" frameHeight="276" />
+<SubTexture name="down0001" x="0" y="643" width="271" height="175" frameX="-30" frameY="-81" frameWidth="321" frameHeight="276" />
+<SubTexture name="down0002" x="0" y="439" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="down0003" x="0" y="439" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="left0000" x="0" y="233" width="265" height="206" frameX="-24" frameY="-50" frameWidth="321" frameHeight="276" />
+<SubTexture name="left0001" x="0" y="233" width="265" height="206" frameX="-24" frameY="-50" frameWidth="321" frameHeight="276" />
+<SubTexture name="left0002" x="245" y="439" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="left0003" x="245" y="439" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="right0000" x="444" y="0" width="268" height="206" frameX="-42" frameY="-50" frameWidth="321" frameHeight="276" />
+<SubTexture name="right0001" x="444" y="0" width="268" height="206" frameX="-42" frameY="-50" frameWidth="321" frameHeight="276" />
+<SubTexture name="right0002" x="712" y="0" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="right0003" x="712" y="0" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="up0000" x="0" y="0" width="221" height="233" frameX="-53" frameY="-23" frameWidth="321" frameHeight="276" />
+<SubTexture name="up0001" x="0" y="0" width="221" height="233" frameX="-53" frameY="-23" frameWidth="321" frameHeight="276" />
+<SubTexture name="up0002" x="712" y="204" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="up0003" x="712" y="204" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0000" x="221" y="0" width="223" height="230" frameX="-53" frameY="-26" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0001" x="221" y="0" width="223" height="230" frameX="-53" frameY="-26" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0002" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0003" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0004" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0005" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0006" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0007" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0008" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0009" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0010" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0011" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0012" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0013" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0014" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0015" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0016" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0017" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0018" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0019" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0020" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0021" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+<SubTexture name="happy0022" x="712" y="408" width="245" height="204" frameX="-43" frameY="-51" frameWidth="321" frameHeight="276" />
+</TextureAtlas>

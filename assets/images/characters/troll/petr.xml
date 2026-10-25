@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="petr.png">
+<SubTexture name="petr0000" x="0" y="56" width="109" height="44" frameX="0" frameY="-21" frameWidth="109" frameHeight="70" />
+<SubTexture name="petr0001" x="0" y="56" width="109" height="44" frameX="0" frameY="-21" frameWidth="109" frameHeight="70" />
+<SubTexture name="petr0002" x="0" y="0" width="106" height="56" frameX="-1" frameY="-9" frameWidth="109" frameHeight="70" />
+<SubTexture name="petr0003" x="0" y="0" width="106" height="56" frameX="-1" frameY="-9" frameWidth="109" frameHeight="70" />
+<SubTexture name="petr0004" x="106" y="0" width="101" height="56" frameX="-3" frameY="-8" frameWidth="109" frameHeight="70" />
+<SubTexture name="petr0005" x="106" y="0" width="101" height="56" frameX="-3" frameY="-8" frameWidth="109" frameHeight="70" />
+</TextureAtlas>

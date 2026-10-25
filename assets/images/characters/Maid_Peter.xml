@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Maid Peter.png">
+	<!-- Created with Adobe Animate version 23.0.2.103 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Maid Peter0000" x="0" y="0" width="359" height="674" frameX="-2" frameY="-21" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0001" x="0" y="0" width="359" height="674" frameX="-2" frameY="-21" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0002" x="359" y="0" width="364" height="678" frameX="0" frameY="-17" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0003" x="359" y="0" width="364" height="678" frameX="0" frameY="-17" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0004" x="723" y="0" width="353" height="691" frameX="-4" frameY="-5" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0005" x="723" y="0" width="353" height="691" frameX="-4" frameY="-5" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0006" x="1076" y="0" width="347" height="696" frameX="-5" frameY="0" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0007" x="1076" y="0" width="347" height="696" frameX="-5" frameY="0" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0008" x="1423" y="0" width="349" height="694" frameX="-5" frameY="-2" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0009" x="1423" y="0" width="349" height="694" frameX="-5" frameY="-2" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0010" x="1423" y="0" width="349" height="694" frameX="-5" frameY="-2" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0011" x="1423" y="0" width="349" height="694" frameX="-5" frameY="-2" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0012" x="1423" y="0" width="349" height="694" frameX="-5" frameY="-2" frameWidth="364" frameHeight="696"/>
+	<SubTexture name="Maid Peter0013" x="1423" y="0" width="349" height="694" frameX="-5" frameY="-2" frameWidth="364" frameHeight="696"/>
+</TextureAtlas>

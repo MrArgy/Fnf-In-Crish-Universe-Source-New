@@ -1,0 +1,17 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.7" name="basyaworld" folder="stages/basyaworld/" startCamPosY="0" startCamPosX="0">
+	<sprite name="sky"               x="250"  y="400"   sprite="sky"        	/>
+	<sprite name="sun"               x="250"  y="400"   sprite="sun"        	/>
+	<sprite name="clouds"            x="250"  y="400"   sprite="clouds"     	/>
+	<sprite name="clouds2"           x="2973" y="400"   sprite="clouds"     	/>
+	<sprite name="bg4"               x="250"  y="400"   sprite="backround-4"	/>
+	<sprite name="bg3"               x="250"  y="400"   sprite="backround-3"	/>
+	<sprite name="bg2"               x="250"  y="400"   sprite="backround-2"	/>
+	<sprite name="bg1"               x="250"  y="400"   sprite="backround-1"	/>
+	<sprite name="fg"				 x="250"  y="400"   sprite="foreground" 	/>
+	<sprite name="black"			 x="250"  y="400"   sprite="black" 			/>
+	
+	<girlfriend x="999999" y="99999"/>
+	<dad x="530" y="850"/>
+	<boyfriend x="1580" y="810"/>
+</stage>

@@ -1,0 +1,14 @@
+{
+  "params": [
+    {
+      "name": "Target zoom",
+      "type": "Float(0.01, null, 0.01, 2)",
+      "defaultValue": 1
+    },
+    {
+      "name": "Duration (seconds, 0 = instant)",
+      "type": "Float(0, null, 0.1, 2)",
+      "defaultValue": 1
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": true,
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"bpm": 133,
+	"difficulties": [
+		"Hard"
+	],
+	"needsVoices": true,
+	"parsedColor": -11052,
+	"displayName": "Sponge",
+	"icon": "basya",
+	"name": "Sponge",
+	"color": "#FFD4D4"
+}

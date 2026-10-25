@@ -1,0 +1,19 @@
+{
+  "params": [
+    {
+      "name": "Enabled",
+      "type": "Bool",
+      "defaultValue": true
+    },
+    {
+      "name": "Angle (degrees)",
+      "type": "Float(0, 180, 1, 2)",
+      "defaultValue": 10
+    },
+    {
+      "name": "Return duration (seconds)",
+      "type": "Float(0, null, 0.01, 2)",
+      "defaultValue": 0.2
+    }
+  ]
+}

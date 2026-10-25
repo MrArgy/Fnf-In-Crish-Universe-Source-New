@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<character x="-50" sprite="basyaFC" camx="180" camy="40" icon="basya" color="#FFCDCF" holdTime="6.1">
+	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="left" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singUP" anim="up" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singDOWN" anim="down" x="0" y="0" fps="30" loop="false"/>
+	<anim name="end" anim="end" x="0" y="0" fps="24" loop="false"/>
+	<anim name="end-loop" anim="end" x="0" y="0" fps="24" loop="true" indices="40..45,47..60"/>
+</character>

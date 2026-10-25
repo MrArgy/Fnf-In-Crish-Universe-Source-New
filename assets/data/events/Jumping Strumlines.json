@@ -1,0 +1,14 @@
+{
+  "params": [
+    {
+      "name": "Enabled",
+      "type": "Bool",
+      "defaultValue": true
+    },
+    {
+      "name": "Jump height (pixels)",
+      "type": "Float(0, null, 1, 2)",
+      "defaultValue": 12
+    }
+  ]
+}

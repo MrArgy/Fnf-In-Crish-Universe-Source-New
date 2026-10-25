@@ -1,0 +1,16 @@
+export/
+dump/
+latest/windows/obj/
+latest/windows/haxe/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+.haxelib/
+pages/
+mods/*
+!mods/readme.txt
+/CODEX_HANDOFF.md
+/TODO.md
+/CODEX_CHANGELOG.md
+docs/AndroidBuild.md
+docs/HudFonts.md

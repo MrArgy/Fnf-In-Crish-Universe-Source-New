@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<character x="120" y="370" sprite="BF_for_cheater" flipX="true" camx="50" camy="-120" isPlayer="true" icon="bf" color="#30B0D1" gameOverChar="bf-dead-cheater">
+	<anim name="firstDeath" anim="dead" x="0" y="0" fps="24" loop="false"/>
+	<anim name="deathLoop" anim="retry" x="-110" y="-315" fps="24" loop="true"/>
+	<anim name="deathConfirm" anim="retry" x="-110" y="-315" fps="24" loop="false"/>
+</character>

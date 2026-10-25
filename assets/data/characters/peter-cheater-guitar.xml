@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<character x="-25" y="40" sprite="piter" scale="1.4" camx="25" icon="peter" color="#AE66CE" holdTime="6.1">
+	<anim name="idle" anim="idle" x="-2" y="0" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="left" x="145" y="-5" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="-35" y="-60" fps="24" loop="false"/>
+	<anim name="singUP" anim="up" x="-40" y="47" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down" x="285" y="-62" fps="24" loop="false"/>
+	<anim name="end" anim="end-song" x="67" y="30" fps="24" loop="false"/>
+	<anim name="end-loop" anim="end-song" x="67" y="30" fps="24" loop="true" indices="48,49"/>
+</character>

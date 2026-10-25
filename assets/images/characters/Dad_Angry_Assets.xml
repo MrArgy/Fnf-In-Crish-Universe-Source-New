@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Dad_Angry_Assets.png">
+<SubTexture name="dddifperRight0000" x="1342" y="0" width="323" height="484" frameX="-11" frameY="0" frameWidth="335" frameHeight="484" />
+<SubTexture name="dddifperRight0001" x="1342" y="0" width="323" height="484" frameX="-11" frameY="0" frameWidth="335" frameHeight="484" />
+<SubTexture name="dddifperRight0002" x="0" y="981" width="325" height="484" frameX="0" frameY="0" frameWidth="335" frameHeight="484" />
+<SubTexture name="dddifperRight0003" x="0" y="981" width="325" height="484" frameX="0" frameY="0" frameWidth="335" frameHeight="484" />
+<SubTexture name="dddifperangry0000" x="0" y="1465" width="290" height="468" frameX="0" frameY="-13" frameWidth="292" frameHeight="483" />
+<SubTexture name="dddifperangry0001" x="0" y="1465" width="290" height="468" frameX="0" frameY="-12" frameWidth="292" frameHeight="483" />
+<SubTexture name="dddifperangry0002" x="1342" y="484" width="288" height="483" frameX="-4" frameY="0" frameWidth="292" frameHeight="483" />
+<SubTexture name="dddifperangry0003" x="1342" y="484" width="288" height="483" frameX="-4" frameY="0" frameWidth="292" frameHeight="483" />
+<SubTexture name="dddifperangry0004" x="895" y="981" width="288" height="480" frameX="-3" frameY="-2" frameWidth="292" frameHeight="483" />
+<SubTexture name="dddifperangry0005" x="1183" y="981" width="288" height="480" frameX="-3" frameY="-2" frameWidth="292" frameHeight="483" />
+<SubTexture name="dddifperangry0006" x="325" y="981" width="285" height="482" frameX="-4" frameY="-1" frameWidth="292" frameHeight="483" />
+<SubTexture name="dddifperangry0007" x="610" y="981" width="285" height="482" frameX="-4" frameY="-1" frameWidth="292" frameHeight="483" />
+<SubTexture name="dddifperconfused0000" x="508" y="0" width="278" height="485" frameX="0" frameY="0" frameWidth="278" frameHeight="485" />
+<SubTexture name="dddifperconfused0001" x="508" y="0" width="278" height="485" frameX="0" frameY="0" frameWidth="278" frameHeight="485" />
+<SubTexture name="dddifperconfused0002" x="786" y="0" width="278" height="485" frameX="0" frameY="0" frameWidth="278" frameHeight="485" />
+<SubTexture name="dddifperconfused0003" x="786" y="0" width="278" height="485" frameX="0" frameY="0" frameWidth="278" frameHeight="485" />
+<SubTexture name="dddifperconfused0004" x="0" y="496" width="278" height="485" frameX="0" frameY="0" frameWidth="278" frameHeight="485" />
+<SubTexture name="dddifperconfused0005" x="0" y="496" width="278" height="485" frameX="0" frameY="0" frameWidth="278" frameHeight="485" />
+<SubTexture name="dddifperdown0000" x="1323" y="1465" width="322" height="377" frameX="0" frameY="-6" frameWidth="322" frameHeight="383" />
+<SubTexture name="dddifperdown0001" x="1323" y="1465" width="322" height="377" frameX="0" frameY="-6" frameWidth="322" frameHeight="383" />
+<SubTexture name="dddifperdown0002" x="1008" y="1465" width="315" height="382" frameX="-4" frameY="-1" frameWidth="322" frameHeight="383" />
+<SubTexture name="dddifperdown0003" x="1008" y="1465" width="315" height="382" frameX="-4" frameY="0" frameWidth="322" frameHeight="383" />
+<SubTexture name="dddifperidle0000" x="1939" y="0" width="278" height="479" frameX="0" frameY="-5" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0001" x="1939" y="0" width="278" height="479" frameX="0" frameY="-5" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0002" x="1665" y="0" width="274" height="480" frameX="-2" frameY="-4" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0003" x="1665" y="480" width="274" height="480" frameX="-2" frameY="-4" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0004" x="1064" y="485" width="277" height="483" frameX="-1" frameY="-1" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0005" x="1064" y="485" width="277" height="483" frameX="-1" frameY="-1" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0006" x="278" y="496" width="277" height="485" frameX="-2" frameY="0" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0007" x="278" y="496" width="277" height="485" frameX="-2" frameY="0" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0008" x="555" y="496" width="278" height="485" frameX="-2" frameY="0" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0009" x="555" y="496" width="278" height="485" frameX="-2" frameY="0" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0010" x="1064" y="0" width="278" height="485" frameX="-2" frameY="0" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0011" x="1064" y="0" width="278" height="485" frameX="-2" frameY="0" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0012" x="555" y="496" width="278" height="485" frameX="-2" frameY="0" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperidle0013" x="555" y="496" width="278" height="485" frameX="-2" frameY="0" frameWidth="280" frameHeight="485" />
+<SubTexture name="dddifperleft0000" x="290" y="1465" width="362" height="465" frameX="0" frameY="0" frameWidth="362" frameHeight="466" />
+<SubTexture name="dddifperleft0001" x="290" y="1465" width="362" height="465" frameX="0" frameY="0" frameWidth="362" frameHeight="466" />
+<SubTexture name="dddifperleft0002" x="652" y="1465" width="356" height="464" frameX="-4" frameY="-1" frameWidth="362" frameHeight="466" />
+<SubTexture name="dddifperleft0003" x="652" y="1465" width="356" height="464" frameX="-4" frameY="-1" frameWidth="362" frameHeight="466" />
+<SubTexture name="dddifperup0000" x="0" y="0" width="249" height="496" frameX="-5" frameY="0" frameWidth="260" frameHeight="497" />
+<SubTexture name="dddifperup0001" x="0" y="0" width="249" height="496" frameX="-5" frameY="0" frameWidth="260" frameHeight="497" />
+<SubTexture name="dddifperup0002" x="249" y="0" width="259" height="488" frameX="0" frameY="-7" frameWidth="260" frameHeight="497" />
+<SubTexture name="dddifperup0003" x="249" y="0" width="259" height="488" frameX="0" frameY="-7" frameWidth="260" frameHeight="497" />
+</TextureAtlas>

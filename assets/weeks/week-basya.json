@@ -1,0 +1,58 @@
+{
+	"storyName": "Basya's first rapbattle",
+	"difficulties": "Hard",
+	"hideFreeplay": false,
+	"weekBackground": "basya",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		146,113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"noobing",
+			"noobing",
+			[
+				246,
+				228,
+				246
+			]
+		],
+		[
+			"sponge",
+			"sponge",
+			[
+				246,
+				228,
+				246
+			]
+		],
+		[
+			"fightcraft",
+			"fightcraft",
+			[
+				246,
+				228,
+				246
+			]
+		]
+		[
+			"fightcraft-old",
+			"fightcraft-old",
+			[
+				246,
+				228,
+				246
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "ncfn"
+}

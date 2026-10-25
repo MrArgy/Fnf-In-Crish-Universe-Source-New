@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="peterdialogue.png">
+<SubTexture name="like0000" x="631" y="0" width="352" height="497" frameX="-168" frameY="-131" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0000" x="0" y="0" width="317" height="515" frameX="-153" frameY="-126" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0001" x="0" y="0" width="317" height="515" frameX="-153" frameY="-126" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0002" x="317" y="0" width="314" height="504" frameX="-156" frameY="-137" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0003" x="317" y="0" width="314" height="504" frameX="-156" frameY="-137" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0004" x="983" y="0" width="314" height="497" frameX="-157" frameY="-143" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0005" x="983" y="0" width="314" height="497" frameX="-157" frameY="-143" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0006" x="0" y="515" width="314" height="496" frameX="-157" frameY="-144" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0007" x="0" y="515" width="314" height="496" frameX="-157" frameY="-144" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0008" x="314" y="515" width="313" height="496" frameX="-158" frameY="-144" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry0009" x="314" y="515" width="313" height="496" frameX="-158" frameY="-144" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry idle0000" x="627" y="515" width="313" height="496" frameX="-158" frameY="-144" frameWidth="720" frameHeight="720" />
+<SubTexture name="angry idle0001" x="627" y="515" width="313" height="496" frameX="-158" frameY="-144" frameWidth="720" frameHeight="720" />
+<SubTexture name="talk0000" x="940" y="515" width="325" height="477" frameX="-168" frameY="-166" frameWidth="720" frameHeight="720" />
+<SubTexture name="talk0001" x="940" y="515" width="325" height="477" frameX="-168" frameY="-166" frameWidth="720" frameHeight="720" />
+<SubTexture name="talk0002" x="1297" y="0" width="332" height="472" frameX="-165" frameY="-171" frameWidth="720" frameHeight="720" />
+<SubTexture name="talk0003" x="1297" y="0" width="332" height="472" frameX="-165" frameY="-171" frameWidth="720" frameHeight="720" />
+<SubTexture name="talk0004" x="0" y="1011" width="335" height="468" frameX="-163" frameY="-175" frameWidth="720" frameHeight="720" />
+<SubTexture name="talk0005" x="0" y="1011" width="335" height="468" frameX="-163" frameY="-175" frameWidth="720" frameHeight="720" />
+<SubTexture name="talk0006" x="335" y="1011" width="336" height="467" frameX="-163" frameY="-176" frameWidth="720" frameHeight="720" />
+<SubTexture name="talk0007" x="335" y="1011" width="336" height="467" frameX="-163" frameY="-176" frameWidth="720" frameHeight="720" />
+<SubTexture name="talk idle0000" x="671" y="1011" width="337" height="466" frameX="-162" frameY="-177" frameWidth="720" frameHeight="720" />
+<SubTexture name="scared0000" x="841" y="1479" width="348" height="361" frameX="-154" frameY="-287" frameWidth="720" frameHeight="720" />
+<SubTexture name="scared0001" x="841" y="1479" width="348" height="361" frameX="-154" frameY="-287" frameWidth="720" frameHeight="720" />
+<SubTexture name="scared0002" x="495" y="1479" width="346" height="366" frameX="-153" frameY="-282" frameWidth="720" frameHeight="720" />
+<SubTexture name="scared0003" x="495" y="1479" width="346" height="366" frameX="-153" frameY="-282" frameWidth="720" frameHeight="720" />
+<SubTexture name="scared0004" x="1629" y="825" width="345" height="368" frameX="-153" frameY="-280" frameWidth="720" frameHeight="720" />
+<SubTexture name="scared idle0000" x="1629" y="825" width="345" height="368" frameX="-153" frameY="-280" frameWidth="720" frameHeight="720" />
+<SubTexture name="very scared0000" x="1008" y="1011" width="470" height="426" frameX="-38" frameY="-226" frameWidth="720" frameHeight="720" />
+<SubTexture name="very scared0001" x="1008" y="1011" width="470" height="426" frameX="-38" frameY="-226" frameWidth="720" frameHeight="720" />
+<SubTexture name="very scared0002" x="1629" y="414" width="484" height="411" frameX="-27" frameY="-240" frameWidth="720" frameHeight="720" />
+<SubTexture name="very scared0003" x="1629" y="414" width="484" height="411" frameX="-27" frameY="-240" frameWidth="720" frameHeight="720" />
+<SubTexture name="very scared0004" x="0" y="1479" width="495" height="407" frameX="-18" frameY="-244" frameWidth="720" frameHeight="720" />
+<SubTexture name="very scared0005" x="0" y="1479" width="495" height="407" frameX="-18" frameY="-244" frameWidth="720" frameHeight="720" />
+<SubTexture name="very scared0006" x="1629" y="0" width="494" height="414" frameX="-17" frameY="-238" frameWidth="720" frameHeight="720" />
+<SubTexture name="very scared idle0000" x="1629" y="0" width="494" height="414" frameX="-17" frameY="-238" frameWidth="720" frameHeight="720" />
+</TextureAtlas>
