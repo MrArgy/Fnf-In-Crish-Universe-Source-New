@@ -3,6 +3,7 @@ package funkin.game;
 import haxe.xml.Access;
 
 class SplashGroup extends FlxTypedGroup<FunkinSprite> {
+	var hudBases:Map<FunkinSprite, {x:Float, y:Float, alpha:Float}> = [];
 	/**
 	 * Whenever the splash group has successfully loaded or not.
 	 */
@@ -107,12 +108,18 @@ class SplashGroup extends FlxTypedGroup<FunkinSprite> {
 	public function showOnStrum(strum:Strum) {
 		if (!valid) return null;
 		__splash = recycle();
+		if (PlayState.instance != null && PlayState.instance.hud != null && PlayState.instance.hud.preset != null) {
+			if (!hudBases.exists(__splash)) hudBases.set(__splash,{x:__splash.scale.x,y:__splash.scale.y,alpha:__splash.alpha});
+			var base = hudBases[__splash];
+			__splash.scale.set(base.x,base.y); __splash.updateHitbox(); __splash.alpha = base.alpha;
+		}
 
 		__splash.cameras = strum.lastDrawCameras;
 		__splash.setPosition(strum.x + ((strum.width - __splash.width) / 2), strum.y + ((strum.height - __splash.height) / 2));
 		__splash.active = __splash.visible = true;
 		__splash.playAnim(getSplashAnim(strum.ID), true);
 		__splash.scrollFactor.set(strum.scrollFactor.x, strum.scrollFactor.y);
+		if (PlayState.instance != null && PlayState.instance.hud != null) PlayState.instance.hud.styleTransient("splashes",__splash);
 
 		return __splash;
 	}

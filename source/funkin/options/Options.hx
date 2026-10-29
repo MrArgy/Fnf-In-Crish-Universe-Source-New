@@ -55,6 +55,10 @@ class Options
 	public static var editorSFX:Bool = true;
 	public static var editorPrettyPrint:Bool = false;
 	public static var maxUndos:Int = 120;
+	public static var hudEditorSnapping:Bool = true;
+	public static var hudEditorGrid:Bool = false;
+	public static var hudEditorGridSize:Int = 16;
+	public static var hudEditorSnapDistance:Int = 8;
 
 	/**
 	 * QOL FEATURES
@@ -133,7 +137,7 @@ class Options
 		if (__save == null) __save = new FlxSave();
 		__save.bind("options", "CodenameEngine");
 		__load();
-		if (menuTheme != "classic" && menuTheme != "crazyStories") menuTheme = "classic";
+		if (!funkin.backend.MenuTheme.isValid(menuTheme)) menuTheme = "classic";
 
 		if (!__eventAdded) {
 			Lib.application.onExit.add(function(i:Int) {

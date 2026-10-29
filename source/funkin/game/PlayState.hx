@@ -38,6 +38,7 @@ using StringTools;
 @:access(funkin.game.StrumLine)
 class PlayState extends MusicBeatState
 {
+	public var hud:funkin.game.hud.HudRuntime;
 	/**
 	 * Current PlayState instance.
 	 */
@@ -593,6 +594,7 @@ class PlayState extends MusicBeatState
 		camGame = camera;
 		FlxG.cameras.add(camHUD = new HudCamera(), false);
 		camHUD.bgColor.alpha = 0;
+		hud = new funkin.game.hud.HudRuntime(funkin.game.hud.HudStore.active(), camHUD);
 
 		downscroll = Options.downscroll;
 
@@ -727,6 +729,7 @@ class PlayState extends MusicBeatState
 		}
 
 		add(strumLines);
+		insert(0, hud.back);
 
 		splashHandler = new SplashHandler();
 		add(splashHandler);
@@ -845,6 +848,10 @@ class PlayState extends MusicBeatState
 		__updateNote_event = EventManager.get(NoteUpdateEvent);
 
 		scripts.call("postCreate");
+		hud.applyPlayState(this);
+		add(hud.front);
+		hud.startScripts();
+		if (updateIconPositions != null) updateIconPositions();
 	}
 
 	/**
@@ -948,6 +955,7 @@ class PlayState extends MusicBeatState
 				sprite.updateHitbox();
 				sprite.screenCenter();
 				sprite.antialiasing = event.antialiasing;
+				if (hud != null) hud.styleTransient("countdown", sprite);
 				add(sprite);
 				tween = FlxTween.tween(sprite, {y: sprite.y + 100, alpha: 0}, Conductor.crochet / 1000, {
 					ease: FlxEase.cubeInOut,
@@ -1006,6 +1014,10 @@ class PlayState extends MusicBeatState
 
 	public override function destroy() {
 		scripts.call("destroy");
+		if (hud != null) {
+			remove(hud.back, true); remove(hud.front, true);
+			hud.destroy(); hud = null;
+		}
 		for(g in __cachedGraphics)
 			g.useCount--;
 		@:privateAccess
@@ -1072,9 +1084,11 @@ class PlayState extends MusicBeatState
 	}
 
 	@:dox(hide)
-	private inline function generateStrums(amount:Int = 4):Void
+	private inline function generateStrums(amount:Int = 4):Void {
+		if (hud != null) hud.receptorCount = amount;
 		for(p in strumLines)
 			p.generateStrums(amount);
+	}
 
 	@:dox(hide)
 	override function openSubState(SubState:FlxSubState)
@@ -1255,6 +1269,7 @@ class PlayState extends MusicBeatState
 
 		iconP1.health = healthBarPercent / 100;
 		iconP2.health = 1 - (healthBarPercent / 100);
+		if (hud != null) hud.positionIcons(this);
 	}
 
 	dynamic function updateRatingStuff() {
@@ -1279,11 +1294,13 @@ class PlayState extends MusicBeatState
 	@:dox(hide)
 	override public function update(elapsed:Float)
 	{
+		if (hud != null) hud.beforeUpdate();
 		scripts.call("update", [elapsed]);
 
 		if (inCutscene) {
 			super.update(elapsed);
 			scripts.call("postUpdate", [elapsed]);
+			updateHud(elapsed);
 			return;
 		}
 
@@ -1374,6 +1391,12 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		scripts.call("postUpdate", [elapsed]);
+		updateHud(elapsed);
+	}
+
+	function updateHud(elapsed:Float) {
+		if (hud != null) hud.update(elapsed, {time:Conductor.songPosition, length:inst == null ? 0 : inst.length,
+			combo:combo, deaths:deathCounter, score:songScore, misses:misses, beat:curBeat});
 	}
 
 	override function draw() {
@@ -1815,6 +1838,7 @@ class PlayState extends MusicBeatState
 			rating.antialiasing = evt.ratingAntialiasing;
 		}
 		rating.updateHitbox();
+		if (hud != null) hud.styleTransient("judgements", rating, false);
 
 		FlxTween.tween(rating, {alpha: 0}, 0.2, {
 			startDelay: Conductor.crochet * 0.001,
@@ -1841,6 +1865,7 @@ class PlayState extends MusicBeatState
 					comboSpr.antialiasing = evt.ratingAntialiasing;
 				}
 				comboSpr.updateHitbox();
+				if (hud != null) hud.styleTransient("judgements", comboSpr, false);
 
 				FlxTween.tween(comboSpr, {alpha: 0}, 0.2, {
 					onComplete: function(tween:FlxTween)
@@ -1861,6 +1886,7 @@ class PlayState extends MusicBeatState
 					numScore.scale.set(evt.numScale, evt.numScale);
 				}
 				numScore.updateHitbox();
+				if (hud != null) hud.styleTransient("judgements", numScore, false);
 
 				numScore.acceleration.y = FlxG.random.int(200, 300);
 				numScore.velocity.y -= FlxG.random.int(140, 160);
@@ -1907,7 +1933,7 @@ class PlayState extends MusicBeatState
 			camHUD.zoom += 0.03 * camZoomingStrength;
 		}
 
-		if (doIconBop && curBeat % camZoomingInterval == 0)
+		if (doIconBop && curBeat % (hud != null && hud.preset != null ? hud.preset.bumpInterval : camZoomingInterval) == 0)
 			for (icon in iconArray)
 				if (icon.bump != null)
 					icon.bump();

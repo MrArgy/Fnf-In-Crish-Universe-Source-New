@@ -28,20 +28,27 @@ class MainState extends FlxState {
 	public static var introVideoShown:Bool = false;
 	public static var warningVideoShown:Bool = false;
 	public override function create() {
+		StartupLog.mark("MainState: create entered");
 		super.create();
 		if (!initiated)
 			Main.loadGameSettings();
 		initiated = true;
 
 		#if sys
+		StartupLog.mark("MainState: temporary folder cleanup begin");
 		CoolUtil.deleteFolder('./.temp/'); // delete temp folder
 		#end
+		StartupLog.mark("MainState: options save begin");
 		Options.save();
 
+		StartupLog.mark("MainState: bitmap cache reset begin");
 		FlxG.bitmap.reset();
+		StartupLog.mark("MainState: sound cleanup begin");
 		FlxG.sound.destroy(true);
 
+		StartupLog.mark("MainState: assets tree reset begin");
 		Paths.assetsTree.reset();
+		StartupLog.mark("MainState: addon loading begin");
 
 		#if MOD_SUPPORT
 		inline function isDirectory(path:String):Bool
@@ -105,13 +112,19 @@ class MainState extends FlxState {
 		#end
 
 		MusicBeatTransition.script = "";
+		StartupLog.mark("MainState: refreshAssets begin");
 		Main.refreshAssets();
+		StartupLog.mark("MainState: mod callbacks begin");
 		ModsFolder.onModSwitch.dispatch(ModsFolder.currentModFolder);
+		StartupLog.mark("MainState: Discord init begin");
 		DiscordUtil.init();
+		StartupLog.mark("MainState: event definitions begin");
 		EventsData.reloadEvents();
 		TitleState.initialized = false;
 
+		StartupLog.mark("MainState: localization begin");
 		funkin.backend.Localization.init();
+		StartupLog.mark("MainState: startup routing begin");
 		if (!introVideoShown) {
 			introVideoShown = true;
 			if (Options.showStartupVideo)
@@ -120,9 +133,11 @@ class MainState extends FlxState {
 		} else showLanguageSelection();
 
 		CoolUtil.safeAddAttributes('./.temp/', NativeAPI.FileAttribute.HIDDEN);
+		StartupLog.mark("MainState: create complete");
 	}
 
 	public static function showLanguageSelection() {
+		StartupLog.mark("Startup: language selection requested");
 		if (!languageSelectionShown) {
 			languageSelectionShown = true;
 			FlxG.switchState(new funkin.menus.LanguageSelectState());
@@ -130,6 +145,7 @@ class MainState extends FlxState {
 	}
 
 	public static function continueStartup() {
+		StartupLog.mark("Startup: continue after language selection");
 		if (!warningVideoShown) {
 			warningVideoShown = true;
 			if (Options.showWarningVideo) {
@@ -145,6 +161,7 @@ class MainState extends FlxState {
 	}
 
 	public static function afterWarningVideo() {
+		StartupLog.mark("Startup: continue after warning video");
 		#if debug
 		if (!betaWarningShown) {
 			betaWarningShown = true;

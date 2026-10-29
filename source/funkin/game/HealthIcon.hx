@@ -55,6 +55,10 @@ class HealthIcon extends FunkinSprite
 	 * This is what scale the icon should return to when its bump animation is finished
 	 */
 	public var defaultScale:Float = 1;
+	public var bumpScale:Float = 1.2;
+	public var bumpLerp:Float = 0.33;
+	/** HUD aspect ratio, independent of the icon's beat pulse. */
+	public var bumpAspect:Float = 1;
 
 	/**
 	 * Whenever or not the icon is animated or not
@@ -110,8 +114,8 @@ class HealthIcon extends FunkinSprite
 	 * Called every beat, and causes the icon to become bigger
 	**/
 	public dynamic function bump():Void {
-		var iconScale = 1.2;
-		scale.set(defaultScale * iconScale, defaultScale * iconScale);
+		var iconScale = bumpScale;
+		scale.set(defaultScale * iconScale, defaultScale * iconScale * bumpAspect);
 		updateHitbox();
 	}
 
@@ -119,8 +123,8 @@ class HealthIcon extends FunkinSprite
 	 * Called every frame and causes the icon to become smaller
 	**/
 	public dynamic function updateBump():Void {
-		var iconLerp = 0.33;
-		scale.set(CoolUtil.fpsLerp(scale.x, defaultScale, iconLerp), CoolUtil.fpsLerp(scale.y, defaultScale, iconLerp));
+		var iconLerp = bumpLerp;
+		scale.set(CoolUtil.fpsLerp(scale.x, defaultScale, iconLerp), CoolUtil.fpsLerp(scale.y, defaultScale * bumpAspect, iconLerp));
 		updateHitbox();
 	}
 

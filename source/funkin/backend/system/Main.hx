@@ -64,20 +64,30 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+		StartupLog.init();
+		StartupLog.mark("Main: constructor entered");
 
 		instance = this;
 
+		StartupLog.mark("Main: crash handler begin");
 		CrashHandler.init();
+		StartupLog.mark("Main: crash handler ready");
 		#if android
 		AndroidStorage.init();
 		#end
 
+		StartupLog.mark("Main: FunkinGame creation begin");
 		addChild(game = new FunkinGame(gameWidth, gameHeight, MainState, Options.framerate, Options.framerate, skipSplash, startFullscreen));
+		StartupLog.mark("Main: FunkinGame created");
 
 		#if (!mobile && !web)
+		StartupLog.mark("Main: FPS overlay creation begin");
 		addChild(framerateSprite = new funkin.backend.system.framerate.Framerate());
+		StartupLog.mark("Main: FPS overlay created; SystemInfo begin");
 		SystemInfo.init();
+		StartupLog.mark("Main: SystemInfo ready");
 		#end
+		StartupLog.mark("Main: constructor complete");
 	}
 
 	@:dox(hide)
@@ -109,27 +119,33 @@ class Main extends Sprite
 	}
 
 	public static function loadGameSettings() {
+		StartupLog.mark("Settings: window/save helpers begin");
 		WindowUtils.init();
 		SaveWarning.init();
 		MemoryUtil.init();
 		@:privateAccess
 		FlxG.game.getTimer = getTimer;
 		#if ALLOW_MULTITHREADING
+		StartupLog.mark("Settings: worker threads begin");
 		for(i in 0...4)
 			gameThreads.push(Thread.createWithEventLoop(function() {Thread.current().events.promise();}));
 		#end
+		StartupLog.mark("Settings: cache/assets tree begin");
 		FunkinCache.init();
 		Paths.assetsTree = new AssetsLibraryList();
 
 		#if UPDATE_CHECKING
 		funkin.backend.system.updating.UpdateUtil.init();
 		#end
+		StartupLog.mark("Settings: shader hooks and console logging begin");
 		ShaderResizeFix.init();
 		Logs.init();
 		Paths.init();
 		#if GLOBAL_SCRIPT
+		StartupLog.mark("Settings: global scripts begin");
 		funkin.backend.scripting.GlobalScript.init();
 		#end
+		StartupLog.mark("Settings: asset library mount begin; source build=" + startedFromSource);
 
 		#if (sys && TEST_BUILD)
 			trace("Used cne test / cne build. Switching into source assets.");
@@ -147,10 +163,14 @@ class Main extends Sprite
 		@:privateAccess
 		lib.__proxy = Paths.assetsTree;
 		Assets.registerLibrary('default', lib);
+		StartupLog.mark("Settings: asset library mounted; player controls begin");
 
 		funkin.options.PlayerSettings.init();
+		StartupLog.mark("Settings: score save begin");
 		funkin.savedata.FunkinSave.init();
+		StartupLog.mark("Settings: options load begin");
 		Options.load();
+		StartupLog.mark('Settings: options loaded; startupVideo=${Options.showStartupVideo}, warningVideo=${Options.showWarningVideo}');
 		#if android
 		funkin.backend.mobile.MobileControls.init();
 		funkin.options.PlayerSettings.solo.controls.bindTouch();
@@ -161,8 +181,11 @@ class Main extends Sprite
 
 		FlxG.scaleMode = scaleMode = new FunkinRatioScaleMode();
 
+		StartupLog.mark("Settings: conductor begin");
 		Conductor.init();
+		StartupLog.mark("Settings: audio device hooks begin");
 		AudioSwitchFix.init();
+		StartupLog.mark("Settings: event manager begin");
 		EventManager.init();
 		FlxG.signals.focusGained.add(onFocus);
 		FlxG.signals.preStateSwitch.add(onStateSwitch);
@@ -170,15 +193,19 @@ class Main extends Sprite
 
 		FlxG.mouse.useSystemCursor = true;
 		#if DARK_MODE_WINDOW
+		StartupLog.mark("Settings: native window styling begin");
 		if(funkin.backend.utils.NativeAPI.hasVersion("Windows 10")) funkin.backend.utils.NativeAPI.redrawWindowHeader();
 		#end
 
+		StartupLog.mark("Settings: mod selection begin");
 		ModsFolder.init();
 		#if MOD_SUPPORT
 		ModsFolder.switchMod(modToLoad.getDefault(Options.lastLoadedMod));
 		#end
 
+		StartupLog.mark("Settings: transition graphics begin");
 		initTransition();
+		StartupLog.mark("Settings: complete");
 	}
 
 	public static function refreshAssets() {

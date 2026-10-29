@@ -3,6 +3,10 @@ package funkin.options.categories;
 class AppearanceOptions extends OptionsScreen {
 	public override function new() {
 		super("Appearance", "Change Appearance options such as Flashing menus...");
+		add(new TextOption("HUD Editor", "Arrange the HUD, notes and strumlines, add widgets and save presets.", function() {
+			Options.save();
+			FlxG.switchState(new funkin.editors.hud.HudEditorState());
+		}));
 		add(new TextOption("Themes", "Choose the look and music of the menus. Gameplay keeps its own colours.", function() {
 			parent.add(new ThemesOptions());
 		}));

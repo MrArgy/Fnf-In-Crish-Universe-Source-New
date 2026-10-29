@@ -23,6 +23,8 @@ class UIState extends MusicBeatState {
 
 	private var __rect:FlxRect;
 	private var __mousePos:FlxPoint;
+	private var __previousTextInput:Bool;
+	private var __ownsTextInput:Bool = false;
 
 	private inline static function get_state()
 		return FlxG.state is UIState ? cast FlxG.state : null;
@@ -33,6 +35,7 @@ class UIState extends MusicBeatState {
 		super.create();
 		Framerate.offset.y = 30;
 		FlxG.mouse.visible = true;
+		__previousTextInput = FlxG.stage.window.textInputEnabled;
 
 		FlxG.stage.window.onKeyDown.add(onKeyDown);
 		FlxG.stage.window.onKeyUp.add(onKeyUp);
@@ -115,6 +118,16 @@ class UIState extends MusicBeatState {
 		if (FlxG.mouse.justReleased)
 			currentFocus = (hoveredSprite is IUIFocusable) ? (cast hoveredSprite) : null;
 
+		// KeyDown supplies Backspace/arrows, but SDL text input must be enabled
+		// explicitly for the window to supply printable characters to onTextInput.
+		if (currentFocus is UITextBox) {
+			if (!FlxG.stage.window.textInputEnabled) FlxG.stage.window.textInputEnabled = true;
+			__ownsTextInput = true;
+		} else if (__ownsTextInput) {
+			FlxG.stage.window.textInputEnabled = __previousTextInput;
+			__ownsTextInput = false;
+		}
+
 		FlxG.sound.keysAllowed = currentFocus != null ? !(currentFocus is UITextBox) : true;
 
 		if (hoveredSprite != null) {
@@ -126,6 +139,7 @@ class UIState extends MusicBeatState {
 	}
 
 	public override function destroy() {
+		if (__ownsTextInput) FlxG.stage.window.textInputEnabled = __previousTextInput;
 		super.destroy();
 		__mousePos.put();
 

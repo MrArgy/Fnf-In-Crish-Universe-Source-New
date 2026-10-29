@@ -53,6 +53,7 @@ class CrashHandler {
 		e.stopPropagation();
 		e.stopImmediatePropagation();
 
+		funkin.backend.system.StartupLog.mark('UNCAUGHT ERROR: $m\n$stackLabel');
 		NativeAPI.showMessageBox("Codename Engine Crash Handler", 'Uncaught Error:$m\n\n$stackLabel', MSG_ERROR);
 		#if sys
 		Sys.exit(1);
@@ -62,6 +63,7 @@ class CrashHandler {
 	#if (cpp || hl)
 	private static function onError(message:Dynamic):Void
 	{
+		funkin.backend.system.StartupLog.mark('NATIVE ERROR: $message');
 		throw Std.string(message);
 	}
 	#end

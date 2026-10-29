@@ -334,6 +334,7 @@ class StrumLine extends FlxTypedGroup<Strum> {
 		babyArrow.cpu = cpu;
 		babyArrow.updateHitbox();
 		babyArrow.scrollFactor.set();
+		if (PlayState.instance.hud != null) PlayState.instance.hud.applyReceptor(babyArrow, this, i);
 
 		if (event.__doAnimation)
 		{

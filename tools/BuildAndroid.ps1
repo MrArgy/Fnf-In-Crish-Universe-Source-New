@@ -7,6 +7,8 @@ param(
     [string]$SdkPath = "$env:USERPROFILE\AppData\Local\Android\Sdk",
     [string]$JdkPath = "$env:USERPROFILE\Documents\AndroidTools\jdk-17.0.20.1+1",
     [string]$HxcppPath = "$env:USERPROFILE\Documents\AndroidTools\hxcpp-4.3.175",
+    [ValidateRange(512, 16384)]
+    [int]$GradleHeapMB = 4096,
     [switch]$Release
 )
 
@@ -177,7 +179,10 @@ try {
     $env:HAXELIB_PATH = $profileLibraries
     $env:PATH = "$JdkPath\bin;$SdkPath\platform-tools;$env:PATH"
     # Keep Gradle in this JVM, avoiding local daemon/socket startup failures.
-    $env:GRADLE_OPTS = "$env:GRADLE_OPTS -Dorg.gradle.daemon=false -Dorg.gradle.jvmargs= -Djava.net.preferIPv4Stack=true"
+    # Set the heap on the client JVM: org.gradle.jvmargs is deliberately empty,
+    # so setting a daemon heap alone would not configure the process packaging APKs.
+    # Append after inherited options so a terminal's older -Xmx does not win.
+    $env:GRADLE_OPTS = "$env:GRADLE_OPTS -Xms128m -Xmx${GradleHeapMB}m -Dorg.gradle.daemon=false -Dorg.gradle.jvmargs= -Dorg.gradle.workers.max=2 -Dorg.gradle.parallel=false -Djava.net.preferIPv4Stack=true"
     if (!$env:HXCPP_COMPILE_THREADS) { $env:HXCPP_COMPILE_THREADS = '4' }
     Push-Location -LiteralPath $profileRoot
     try {
@@ -186,6 +191,7 @@ try {
         Write-Host "Android NDK: $ndkPath"
         Write-Host "Android hxcpp: $HxcppPath ($($hxcppMetadata.version))"
         Write-Host "Android architectures: $($targetArchitectures -join ', ')"
+        Write-Host "Android Gradle heap limit: $GradleHeapMB MiB; max workers: 2"
         Write-Host "Android profile: $profileRoot"
         & haxelib libpath hxcpp
         if ($LASTEXITCODE -ne 0) { throw 'Unable to resolve Android hxcpp.' }

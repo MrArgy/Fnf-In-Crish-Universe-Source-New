@@ -29,6 +29,7 @@ class IntroVideoState extends FlxState {
 	}
 
 	override function create() {
+		funkin.backend.system.StartupLog.mark('Video: create begin ($videoName)');
 		super.create();
 		FlxG.camera.bgColor = 0xFF000000;
 		#if !mobile
@@ -42,30 +43,37 @@ class IntroVideoState extends FlxState {
 		try {
 			var path = Paths.video(videoName);
 			if (!Assets.exists(path)) {
+				funkin.backend.system.StartupLog.mark('Video: asset missing ($videoName)');
 				trace('Startup video not found: $path');
 				finishRequested = true;
 				return;
 			}
+			funkin.backend.system.StartupLog.mark("Video: VLC initialization begin");
 			video = new FlxVideo();
+			funkin.backend.system.StartupLog.mark("Video: VLC initialization returned");
 			video.autoResizeMode = NONE;
 			video.visible = false;
 			// Defer cleanup to the state's update, outside VLC's event dispatch.
 			video.onEndReached.add(function() { finishRequested = true; });
 			video.onEncounteredError.add(function(message:String) {
+				funkin.backend.system.StartupLog.mark('Video: playback error: $message');
 				trace('Startup video error: $message');
 				finishRequested = true;
 			});
 			FlxG.addChildBelowMouse(video);
 			var localPath = Assets.getPath(path);
 			// Archive assets have no filesystem path; hxvlc also accepts bytes.
+			funkin.backend.system.StartupLog.mark('Video: media load begin ($videoName)');
 			var loaded = localPath != null && !localPath.startsWith("[ZIP]")
 				#if android
 				&& sys.FileSystem.exists(localPath)
 				#end
 				? video.load(localPath) : video.load(Assets.getBytes(path));
 			playPending = loaded;
+			funkin.backend.system.StartupLog.mark('Video: media load returned $loaded');
 			finishRequested = !loaded;
 		} catch (error:Dynamic) {
+			funkin.backend.system.StartupLog.mark('Video: startup error: $error');
 			trace('Unable to start startup video: $error');
 			finishRequested = true;
 		}
@@ -89,7 +97,9 @@ class IntroVideoState extends FlxState {
 		if (!finishRequested && playPending) {
 			playPending = false;
 			try {
+				funkin.backend.system.StartupLog.mark("Video: play begin");
 				if (!video.play()) finishRequested = true;
+				funkin.backend.system.StartupLog.mark("Video: play returned");
 			} catch (error:Dynamic) {
 				trace('Unable to play startup video: $error');
 				finishRequested = true;
@@ -107,7 +117,9 @@ class IntroVideoState extends FlxState {
 
 		if (finishRequested) {
 			leaving = true;
+			funkin.backend.system.StartupLog.mark("Video: cleanup begin");
 			releaseVideo();
+			funkin.backend.system.StartupLog.mark("Video: cleanup complete; continuing startup");
 			onComplete();
 		}
 	}

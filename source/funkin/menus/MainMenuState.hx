@@ -117,8 +117,9 @@ class MainMenuState extends MusicBeatState
 		FlxG.mouse.visible = true;
 		forceCenterX = false;
 		FlxG.camera.scroll.set();
-		bg = new FlxSprite().loadGraphic(Paths.image("menus/crazyStories/argy/skyandcity"));
-		foreground = new FlxSprite().loadGraphic(Paths.image("menus/crazyStories/argy/basyaandoffice"));
+		var scenePath = "menus/crazyStories/" + MenuTheme.sceneFolder;
+		bg = new FlxSprite().loadGraphic(Paths.image(scenePath + "/skyandcity"));
+		foreground = new FlxSprite().loadGraphic(Paths.image(scenePath + "/basyaandoffice"));
 		for (layer in [bg, foreground]) {
 			// ухх оверскан
 			var scale = Math.max(FlxG.width / layer.width, FlxG.height / layer.height) * 1.08;
@@ -131,7 +132,7 @@ class MainMenuState extends MusicBeatState
 		}
 		skyHome.set(bg.x, bg.y);
 		officeHome.set(foreground.x, foreground.y);
-		var vignette = new FlxSprite().loadGraphic(Paths.image("menus/crazyStories/argy/vin"));
+		var vignette = new FlxSprite().loadGraphic(Paths.image(scenePath + "/vin"));
 		vignette.setGraphicSize(FlxG.width, FlxG.height);
 		vignette.updateHitbox();
 		vignette.scrollFactor.set();

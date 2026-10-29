@@ -203,6 +203,7 @@
 	</section>
 
 	<haxeflag name="--macro" value="funkin.backend.system.macros.Macros.initMacros()" />
+	<haxeflag name="--macro" value="funkin.backend.system.macros.DesktopStartupMacro.init()" if="windows" />
 
 	<!-- Fix compiling issues -->
 	<setenv name="HAXEPATH" value="./"/>

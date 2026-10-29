@@ -195,6 +195,7 @@ class Note extends FlxSprite
 		if (PlayState.instance != null) {
 			PlayState.instance.splashHandler.getSplashGroup(splash);
 			PlayState.instance.scripts.event("onPostNoteCreation", event);
+			if (PlayState.instance.hud != null) PlayState.instance.hud.applyNote(this);
 		}
 	}
 

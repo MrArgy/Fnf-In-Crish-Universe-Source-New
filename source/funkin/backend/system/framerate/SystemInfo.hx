@@ -18,6 +18,7 @@ class SystemInfo extends FramerateCategory {
 	static var __formattedSysText:String = "";
 
 	public static inline function init() {
+		funkin.backend.system.StartupLog.mark("SystemInfo: OS query begin");
 		#if linux
 		var process = new HiddenProcess("cat", ["/etc/os-release"]);
 		if (process.exitCode() != 0) Logs.trace('Unable to grab OS Label', ERROR, RED);
@@ -56,6 +57,7 @@ class SystemInfo extends FramerateCategory {
 			Logs.trace('Unable to grab OS Label', ERROR, RED);
 		#end
 
+		funkin.backend.system.StartupLog.mark("SystemInfo: CPU query begin");
 		try {
 			#if windows
 			var process = new HiddenProcess("wmic", ["cpu", "get", "name"]);
@@ -79,9 +81,11 @@ class SystemInfo extends FramerateCategory {
 			}
 			#end
 		} catch (e) {
+			funkin.backend.system.StartupLog.mark('SystemInfo: CPU query failed: $e');
 			Logs.trace('Unable to grab CPU Name: $e', ERROR, RED);
 		}
 
+		funkin.backend.system.StartupLog.mark("SystemInfo: GPU query begin");
 		@:privateAccess {
 			if (flixel.FlxG.stage.context3D != null && flixel.FlxG.stage.context3D.gl != null) {
 				gpuName = Std.string(flixel.FlxG.stage.context3D.gl.getParameter(flixel.FlxG.stage.context3D.gl.RENDERER)).split("/")[0].trim();
@@ -101,18 +105,22 @@ class SystemInfo extends FramerateCategory {
 				Logs.trace('Unable to grab GPU Info', ERROR, RED);
 		}
 
+		funkin.backend.system.StartupLog.mark("SystemInfo: RAM amount query begin");
 		#if cpp
 		totalMem = Std.string(MemoryUtil.getTotalMem() / 1024) + " GB";
 		#else
 		Logs.trace('Unable to grab RAM Amount', ERROR, RED);
 		#end
 
+		funkin.backend.system.StartupLog.mark("SystemInfo: RAM type query begin");
 		try {
 			memType = MemoryUtil.getMemType();
 		} catch (e) {
+			funkin.backend.system.StartupLog.mark('SystemInfo: RAM type query failed: $e');
 			Logs.trace('Unable to grab RAM Type: $e', ERROR, RED);
 		}
 		formatSysInfo();
+		funkin.backend.system.StartupLog.mark("SystemInfo: complete");
 	}
 
 	static function formatSysInfo() {

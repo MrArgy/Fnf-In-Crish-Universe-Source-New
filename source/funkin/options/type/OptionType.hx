@@ -86,10 +86,7 @@ class OptionType extends FlxSpriteGroup {
 		cardLabel.color = selected ? funkin.options.OptionsTheme.Text : funkin.options.OptionsTheme.Secondary;
 		cardLabel.y = y + (76 - cardLabel.height) / 2;
 		var value = ">";
-		if (displayTitle() == "ICU: Classic" || displayTitle() == "ICU: Crazy Stories") {
-			var activeTheme = displayTitle() == "ICU: Crazy Stories" ? funkin.backend.MenuTheme.crazy : !funkin.backend.MenuTheme.crazy;
-			value = activeTheme ? Localization.get("ACTIVE") : ">";
-		}
+		if (displayTitle() == funkin.backend.MenuTheme.themeName(Options.menuTheme)) value = Localization.get("ACTIVE");
 		if (Std.isOfType(this, Checkbox)) {
 			var checkbox:Checkbox = cast this;
 			value = Localization.get(checkbox.checked ? "ON" : "OFF");

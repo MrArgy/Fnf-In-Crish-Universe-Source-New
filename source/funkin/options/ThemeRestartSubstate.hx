@@ -15,6 +15,12 @@ class ThemeRestartSubstate extends MusicBeatSubstate {
 	var inputReady:Bool = false;
 	var restarting:Bool = false;
 	var pointer:FlxPoint = FlxPoint.get();
+	var targetTheme:String;
+
+	public function new(targetTheme:String = MenuTheme.CRAZY_STORIES) {
+		super();
+		this.targetTheme = MenuTheme.isCrazy(targetTheme) ? targetTheme : MenuTheme.CRAZY_STORIES;
+	}
 
 	public override function create() {
 		super.create();
@@ -96,7 +102,7 @@ class ThemeRestartSubstate extends MusicBeatSubstate {
 
 	function restart() {
 		restarting = true;
-		Options.menuTheme = MenuTheme.CRAZY_STORIES;
+		Options.menuTheme = targetTheme;
 		Options.save();
 		OptionsMenu.startInThemes = false;
 		TreeMenu.lastState = null;
